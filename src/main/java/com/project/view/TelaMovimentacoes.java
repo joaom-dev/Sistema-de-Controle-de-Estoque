@@ -1,8 +1,13 @@
+//FUNÇÃO PRINCIPAL
+//1- TELA ONDE O USER REGISTRA ENTRADAS E SAIDAS DE MERCADORIAS
+//2- SO CUIDA DO VISUAL
+
 package com.project.view;
 
 import com.project.controller.MovimentacaoController;
 import com.project.controller.ProdutoController;
 import com.project.model.Produto;
+import com.project.model.TipoMovimentacao;
 
 import java.awt.BorderLayout;
 import java.awt.GridLayout;
@@ -29,8 +34,8 @@ public class TelaMovimentacoes extends JFrame {
 
     private final JLabel saldo = new JLabel("Estoque atual: -");
 
-    private final JComboBox<String> tipo =
-            new JComboBox<>(new String[]{"ENTRADA", "SAÍDA"});
+    private final JComboBox<TipoMovimentacao> tipo =
+            new JComboBox<>(TipoMovimentacao.values());
 
     public TelaMovimentacoes(
             ProdutoController produtos,
@@ -121,7 +126,7 @@ public class TelaMovimentacoes extends JFrame {
             return;
         }
 
-        Produto produto = produtos.buscar(codigoProduto);
+        Produto produto = produtos.buscarPorCodigo(codigoProduto);
 
         if (produto == null) {
 
