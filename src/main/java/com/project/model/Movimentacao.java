@@ -1,3 +1,7 @@
+//FUNÇÕES PRINCIPAIS
+//1-REPRESENTA UM REGISTRO DE HISTORICO DE MOVIMENTAÇÕES
+//2- CLASSE QUE SO REGISTRA OQ ACONTECE
+
 package com.project.model;
 
 import java.time.LocalDateTime;
@@ -33,6 +37,7 @@ public class Movimentacao {
         return data;
     }
 
+    //METODO PARA CONVERTER A DATA PARA O FORMATO BRASILEIRO
     public String getDataFormatada() {
         return data.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
     }
