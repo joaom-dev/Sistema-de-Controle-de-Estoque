@@ -1,3 +1,9 @@
+//FUNÇÕES PRINCIPAIS
+//1- GUARDAR A LISTA DE PRODUTOS EM MEMÓRIA (ARRAY LIST)
+//2- CRUD
+//3- BARRAGEM DE INFORMAÇÕES ERRADAS/ERROS DO USER
+
+
 package com.project.controller;
 
 import java.util.ArrayList;
@@ -6,8 +12,10 @@ import com.project.model.Produto;
 
 public class ProdutoController {
 
+    //BANCO DE DADOS LOCAL QUE SO FUNCIONA ENQUANTO O SISTEMA ESTIVER RODANDO
     private ArrayList<Produto> produtos = new ArrayList<>();
 
+    //METODO PARA CADASTRAR PRODUTO(VALIDA SE JÁ EXISTE CODIGO IGUAL, DEPOIS CRIA CADASTRA O PRODUTO)
     public void cadastrar(String codigo, String descricao, String categoria,
                           double preco, int quantidade, int estoqueMinimo) {
 
@@ -17,14 +25,16 @@ public class ProdutoController {
             throw new IllegalArgumentException("Já existe um produto com o código " + codigo + ".");
         }
 
-        produtos.add(new Produto(codigo.trim(), descricao.trim(), categoria,
+        produtos.add(new Produto(codigo.trim(), descricao.trim(), categoria.trim(),
                 preco, quantidade, estoqueMinimo));
     }
 
+    //METODO PARA LISTAR TODOS OS PRODUTOS
     public ArrayList<Produto> listar() {
-        return produtos;
+        return new ArrayList<>(produtos);
     }
 
+    //METODO QUE PERCORRE O ARRAY COM UM FOR PARA COMPARAR OS CODIGOS DUPLICADOS
     public Produto buscarPorCodigo(String codigo) {
         if (codigo == null) {
             return null;
@@ -37,6 +47,7 @@ public class ProdutoController {
         return null;
     }
 
+    //SISTEMA DE CAMPO DE PESQUISA(SE FICAR VAZIO MOSTRA TODOS OS PRODUTOS, PODE ENCONTRAR OS PRODUTOS SO ESCREVENDO UMA PARTE)
     public ArrayList<Produto> pesquisar(String texto) {
         ArrayList<Produto> resultado = new ArrayList<>();
 
@@ -55,6 +66,7 @@ public class ProdutoController {
         return resultado;
     }
 
+    //METODO PARA EDITAR OS PRODUTOS(VALIDA OS CAMPOS, BUSCA OS PRODUTOS PELO CODIGO E DEPOIS ATUALIZA OS DADOS)
     public void editar(String codigo, String descricao, String categoria,
                        double preco, int quantidade, int estoqueMinimo) {
 
@@ -72,6 +84,7 @@ public class ProdutoController {
         p.setEstoqueMinimo(estoqueMinimo);
     }
 
+    //METODO PARA EXCLUIR PRODUTO(VALIDA O CODIGO E SO DPS EXCLUI)
     public void excluir(String codigo) {
         Produto p = buscarPorCodigo(codigo);
         if (p == null) {
@@ -80,6 +93,7 @@ public class ProdutoController {
         produtos.remove(p);
     }
 
+    //METODO DE USO INTERNO(QUANDO ALGO ESTÁ NA ERRADO NAS INFO FICAM SEPARADOS PARA CADASTRAR E EDITAR
     private void validarCampos(String codigo, String descricao, String categoria,
                                double preco, int quantidade, int estoqueMinimo) {
 
