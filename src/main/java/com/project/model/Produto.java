@@ -67,14 +67,11 @@ public class Produto {
         this.estoqueMinimo = estoqueMinimo;
     }
 
-    // ----- Métodos auxiliares (cálculos simples sobre os próprios dados) -----
 
-    /** Valor financeiro deste produto em estoque (preço x quantidade). */
     public double getValorTotal() {
         return precoUnitario * quantidade;
     }
 
-    /** True se a quantidade atual está abaixo do estoque mínimo. */
     public boolean isAbaixoDoMinimo() {
         return quantidade < estoqueMinimo;
     }
