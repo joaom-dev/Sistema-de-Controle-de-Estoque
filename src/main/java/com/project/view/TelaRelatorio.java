@@ -18,9 +18,9 @@ public class TelaRelatorio extends JDialog {
         }
     };
 
-    public TelaRelatorio(Window pai, Estoque estoque) {
+    public TelaRelatorio(Window pai, RelatorioController controller) {
         super(pai, "Relatório de estoque", ModalityType.APPLICATION_MODAL);
-        this.controller = new RelatorioController(estoque);
+        this.controller = controller;
 
         lblTotal.setFont(lblTotal.getFont().deriveFont(Font.BOLD, 16f));
         JPanel topo = new JPanel(new GridLayout(0, 1, 4, 4));

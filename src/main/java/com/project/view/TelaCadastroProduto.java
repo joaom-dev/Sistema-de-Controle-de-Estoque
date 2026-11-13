@@ -1,3 +1,7 @@
+//FUNÇÃO PRINCIPAL
+//1- CADASTRAR UM PRODUTO NOVO QUANDO PRODUTO=NULL
+//2- EDITAR UM PRODUTO EXISTENTE
+
 package com.project.view;
 
 import com.project.controller.ProdutoController;
@@ -16,6 +20,7 @@ import java.awt.FlowLayout;
 import java.awt.GridLayout;
 import java.awt.Window;
 
+                                            //JDialog é uma janela secundaria. Como ela usa ModalityType.APPLICATION_MODAL, enquanto estiver aberta o usuário não consegue clicar nas outras janelas.
 public class TelaCadastroProduto extends JDialog {
 
     private static final String[] CATEGORIAS = {

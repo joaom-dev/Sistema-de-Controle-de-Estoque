@@ -1,3 +1,6 @@
+//FUNÇAO PRINCIPAL
+//CRIAR AS LINHAS E COLUNAS DA TELA
+
 package com.project.view;
 
 import com.project.model.Produto;
@@ -21,11 +24,13 @@ public class ProdutoTableModel extends AbstractTableModel {
         setProdutos(produtos);
     }
 
+    //TROCA OS DADDOS EXIBIDOS. SE VIER NULL TROCA PARA UM LISTA VAZIAS
     public void setProdutos(List<Produto> produtos) {
         this.produtos = (produtos != null) ? new ArrayList<>(produtos) : new ArrayList<>();
         fireTableDataChanged();
     }
 
+    //DEVOLVE O PRODUTO DE UMA LINHA ESPECIFICA. É OQ A TELA USA PARA SABER QUAL O PRODUTO O USUARIO SELECIONOU PRA EDITAR OU EXCLUIR
     public Produto getProduto(int linha) {
         if (linha < 0 || linha >= produtos.size()) {
             return null;
@@ -33,21 +38,25 @@ public class ProdutoTableModel extends AbstractTableModel {
         return produtos.get(linha);
     }
 
+    //RESPONDE A TABELA PRA SABER QUANTAS LINHAS
     @Override
     public int getRowCount() {
         return produtos.size();
     }
 
+    //RESPONDE A TABELA PRA SABER QUANTAS COLUNAS
     @Override
     public int getColumnCount() {
         return COLUNAS.length;
     }
 
+    //DEVOLVE O TITULO DE CADA COLUNA PARA O CABEÇALHO
     @Override
     public String getColumnName(int coluna) {
         return COLUNAS[coluna];
     }
 
+    //DIZ O TIPO DE DADO DE CADA COLUNA. A TELA USA ISSO PARA ALINHAR NUMEROS A DIREITA E FORMATAR O PREÇO
     @Override
     public Class<?> getColumnClass(int coluna) {
         switch (coluna) {
@@ -62,11 +71,13 @@ public class ProdutoTableModel extends AbstractTableModel {
         }
     }
 
+    //
     @Override
     public boolean isCellEditable(int linha, int coluna) {
         return false;
     }
 
+    //METODO MAIS IMPORTANTE. PEGA O PRODUITO DA LINHA E DEVOLVE O DADO DA COLUNA PEDIDA USANDO OS GETTERS DO PRODUTO
     @Override
     public Object getValueAt(int linha, int coluna) {
         Produto p = produtos.get(linha);

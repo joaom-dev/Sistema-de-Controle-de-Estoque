@@ -1,3 +1,6 @@
+//FUNÇÃO PRINCIPAL
+//É A TELA DE CONSULTA. MOSTRA TODOS OS PRODUTOS NUMA JTABLE. PERMITE PESQUISAR POR CODIGO OU DESCRIÇÃO
+
 package com.project.view;
 
 import com.project.controller.ProdutoController;
@@ -28,6 +31,7 @@ public class TelaConsultaProdutos extends JFrame {
     private final JTable tabela = new JTable(modelo);
     private final JTextField busca = new JTextField(22);
 
+    //
     public TelaConsultaProdutos(ProdutoController controller, Runnable aoVoltar) {
         this.controller = controller;
         this.aoVoltar = aoVoltar;
