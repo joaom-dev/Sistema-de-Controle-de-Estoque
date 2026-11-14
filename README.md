@@ -184,3 +184,5 @@ Developed.
 * Export the stock report to PDF or CSV.
 * Add user authentication with different access levels.
 * Add filters by category and charts to the report.
+
+## [![Clique para assistir ao vídeo](https://img.youtube.com/vi/as5nEYtqBYA/0.jpg)](https://www.youtube.com/watch?v=as5nEYtqBYA)
