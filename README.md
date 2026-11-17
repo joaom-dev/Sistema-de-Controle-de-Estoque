@@ -185,4 +185,21 @@ Developed.
 * Add user authentication with different access levels.
 * Add filters by category and charts to the report.
 
+## 17. Prints
+### Tela Inicial
+<img width="500" height="461" alt="image" src="https://github.com/user-attachments/assets/ae89d9cd-6935-4706-9e65-b9409fde83ff" />
+
+### Cadastro de Produtos
+<img width="580" height="482" alt="image" src="https://github.com/user-attachments/assets/84a89b09-9168-4f8e-9c63-891e5ee1ba2f" />
+
+### Consulta de Produtos
+<img width="1038" height="585" alt="image" src="https://github.com/user-attachments/assets/cb848074-d258-4daf-9444-7b00b861c446" />
+
+### Movimentações de Estoque
+<img width="605" height="383" alt="image" src="https://github.com/user-attachments/assets/276eb5c8-9de3-488f-be0d-c8e4917f90aa" />
+
+### Relatorio de Estoque
+<img width="786" height="515" alt="image" src="https://github.com/user-attachments/assets/fc76df33-1313-4c52-bf07-2195e8da018a" />
+
+## 18. Demonstration
 ## [![Clique para assistir ao vídeo](https://img.youtube.com/vi/as5nEYtqBYA/0.jpg)](https://www.youtube.com/watch?v=as5nEYtqBYA)
